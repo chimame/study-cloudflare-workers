@@ -1,0 +1,8 @@
+{
+	"scripts": {
+		"start": "fusuma start"
+	},
+	"devDependencies": {
+		"fusuma": "^2.8.4"
+	}
+}
