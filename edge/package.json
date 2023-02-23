@@ -12,5 +12,8 @@
     "start": "wrangler dev",
     "deploy": "wrangler publish",
     "test": "vitest"
+  },
+  "dependencies": {
+    "hono": "^3.0.1"
   }
 }
