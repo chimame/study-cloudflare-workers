@@ -13,6 +13,16 @@ app.get('/json', (c) => {
   return c.json({hoge: 'fuga'})
 })
 
+app.get('/rewrite', async (c) => {
+  const rewriter = new HTMLRewriter()
+    .on('h1', { element: (element) => { element.setInnerContent('Test') } })
+    .on('a', { element: (element) => { element.setAttribute('href', 'https://google.co.jp') } })
+
+  const response = await fetch('https://example.com')
+
+  return rewriter.transform(response)
+})
+
 app.get('/api/cache', async (c) => {
   const cache = caches.default
   const cacheKey = new Request(c.req.url)
